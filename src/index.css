@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-charcoal-950 text-white font-sans antialiased;
+  }
+
+  input, textarea, select {
+    @apply focus:outline-none focus:ring-2 focus:ring-mirchi-500/50;
+  }
+}
+
+@layer components {
+  .mobile-frame {
+    @apply w-[375px] h-[812px] max-h-[90vh] bg-charcoal-950 rounded-[40px] overflow-hidden shadow-2xl shadow-black/50 border border-charcoal-800;
+    box-shadow:
+      0 0 0 12px #1a1a1a,
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .mobile-notch {
+    @apply w-32 h-7 bg-black rounded-b-2xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-mirchi-500 to-mirchi-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:from-mirchi-600 hover:to-mirchi-700 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-charcoal-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:bg-charcoal-700 active:scale-95;
+  }
+
+  .card {
+    @apply bg-charcoal-900/80 backdrop-blur-sm rounded-2xl border border-charcoal-800/50 overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full bg-charcoal-900 border border-charcoal-700 rounded-xl px-4 py-3 text-white placeholder-charcoal-400 transition-all duration-200 hover:border-charcoal-600 focus:border-mirchi-500;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-mirchi-400 to-mirchi-red bg-clip-text text-transparent;
+  }
+}
